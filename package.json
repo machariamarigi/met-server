@@ -7,8 +7,13 @@
     "dev": "nodemon"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.13",
     "@types/node": "^12.0.7",
+    "@types/supertest": "^2.0.7",
+    "jest": "^24.8.0",
     "nodemon": "^1.19.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.1"
   },
