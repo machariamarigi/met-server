@@ -1,5 +1,6 @@
-import { GraphQLServer } from 'graphql-yoga';
 import 'reflect-metadata';
+import * as path from 'path'
+import { GraphQLServer } from 'graphql-yoga';
 import { buildSchema, Resolver, Query, Arg } from 'type-graphql';
 
 @Resolver()
@@ -13,7 +14,7 @@ class HelloResolver {
 export default async function bootstrapServer(port) {
   const schema = await buildSchema({
     resolvers: [HelloResolver],
-    emitSchemaFile: true
+    emitSchemaFile: path.resolve(__dirname, "__snapshots__/schema/schema.gql"),
   });
 
   const server = new GraphQLServer({
