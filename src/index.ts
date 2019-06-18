@@ -1,3 +1,3 @@
-import server from './server'
+import bootstrapServer from './server';
 
-server.start(() => console.log('Server is running on localhost:4000'));
+bootstrapServer(4000);
