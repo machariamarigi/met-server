@@ -32,7 +32,7 @@ async function graphqlRequest({ variables, query }): Promise<Body> {
 }
 
 beforeAll(async () => {
-  app = await server.start({ port: 4010 });
+  app = await server(4010);
 });
 
 afterAll(() => app.close());
@@ -46,7 +46,7 @@ describe('Hello query', () => {
     `;
     const variables = {};
     const { data } = await graphqlRequest({ query, variables });
-
+  
     expect(data.hello).toBe('Hello Macharia');
   });
 });
